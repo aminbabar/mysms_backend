@@ -7,7 +7,6 @@ class Api::V1::MessagesController < ApplicationController
     # current_user = User.first 
 
     message = current_user.messages.create(message_params)
-    # debugger
     if message.persisted?
       twilio_message = TWILIO_CLIENT.messages.create(
         body: message.body,
