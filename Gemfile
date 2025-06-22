@@ -32,6 +32,7 @@ gem "bootsnap", require: false
 gem 'mongoid'
 gem 'twilio-ruby', '~> 7.6.3'
 gem 'devise', '~> 4.9', '>= 4.9.4'
+gem 'devise-jwt'
 
 
 group :development, :test do

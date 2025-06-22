@@ -4,7 +4,7 @@ class Api::V1::MessagesController < ApplicationController
     # body = params[:message][:body]
 
     #testing
-    current_user = User.first 
+    # current_user = User.first 
 
     message = current_user.messages.create(message_params)
     # debugger
@@ -19,6 +19,11 @@ class Api::V1::MessagesController < ApplicationController
       render json: { errors: message.errors.full_messages }, status: :unprocessable_entity
     end
 
+  end
+
+  def index
+    messages = current_user.messages.order_by(created_at: :desc)
+    render json: messages, status: :ok
   end
 
   def message_params
