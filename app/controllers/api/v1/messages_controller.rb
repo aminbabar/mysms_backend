@@ -16,7 +16,8 @@ class Api::V1::MessagesController < ApplicationController
 
   def index
     messages = current_user.messages.order_by(created_at: :desc)
-    render json: messages, status: :ok
+    render json: messages, each_serializer: MessageSerializer
+    # render json: messages, status: :ok
   end
 
   def message_params
