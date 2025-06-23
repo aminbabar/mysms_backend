@@ -1,14 +1,8 @@
 class Api::V1::MessagesController < ApplicationController
   def create
-    # to = params[:message][:to]
-    # body = params[:message][:body]
-
-    #testing
-    # current_user = User.first 
-
     message = current_user.messages.create(message_params)
     if message.persisted?
-      twilio_message = TWILIO_CLIENT.messages.create(
+      TWILIO_CLIENT.messages.create(
         body: message.body,
         to: message.to,
         from: ENV.fetch('TWILIO_PHONE_NUMBER')  
