@@ -18,4 +18,6 @@ class User
     :id
   end
 
+  index({ email: 1 }, unique: true)
+
 end

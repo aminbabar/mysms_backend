@@ -34,6 +34,8 @@ gem 'twilio-ruby', '~> 7.6.3'
 gem 'devise', '~> 4.9', '>= 4.9.4'
 gem 'devise-jwt'
 
+gem 'phonelib'
+gem 'rack-attack'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
